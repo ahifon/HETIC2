@@ -1,0 +1,26 @@
+# Utilisez la dernière version 2.1 du moteur de processus de pipeline CircleCI.
+# Voir : https://circleci.com/docs/2.0/configuration-reference
+version : 2.1
+
+# Définissez une tâche à invoquer ultérieurement dans un workflow.
+# Voir : https://circleci.com/docs/2.0/configuration-reference/#jobs
+emplois :
+  dis-bonjour :
+    # Spécifiez l'environnement d'exécution. Vous pouvez spécifier une image de Dockerhub ou utiliser l'une de nos images pratiques du Developer Hub de CircleCI.
+    # Voir : https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker :
+      - image : cimg/base:stable
+    # Ajouter des étapes au travail
+    # Voir : https://circleci.com/docs/2.0/configuration-reference/#steps
+    étapes :
+      - caisse
+      - courir :
+          nom : " Dites bonjour "
+          commande : " echo Hello, World! "
+
+# Invoquer des tâches via des workflows
+# Voir : https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows :
+  dis-bonjour-workflow :
+    emplois :
+      - dire bonjour
