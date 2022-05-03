@@ -1,11 +1,11 @@
 from json import loads, dumps
 from sklearn.linear_model import LinearRegression
 
-with open('/data/input.data.json') as f:
+with open('input.data.json') as f:
   content = f.read()
   TRAIN_INPUT = loads(content)
 
-with open('/data/output.data.json') as f:
+with open('output.data.json') as f:
   content = f.read()
   TRAIN_OUTPUT = loads(content)
 
